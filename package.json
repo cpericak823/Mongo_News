@@ -1,0 +1,20 @@
+{
+  "name": "mongo_news",
+  "version": "1.0.0",
+  "description": "an app that uses mongo, mongoose and cheerio to scrape a news source and allow users to add comments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cpericak823/mongo_news.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cpericak823/mongo_news/issues"
+  },
+  "homepage": "https://github.com/cpericak823/mongo_news#readme"
+}
