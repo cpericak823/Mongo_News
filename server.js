@@ -6,6 +6,7 @@ var bodyParser = require("body-parser");
 var request = require("request");
 var cheerio = require("cheerio");
 var mongoose = require('mongoose');
+var path = require("path");
 
 // Initialize Express
 var app = express();
@@ -17,21 +18,18 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
+// Static directory
+app.use(express.static(path.join(__dirname, 'public')));
 
-// Set up a static folder (public) for our web app
-app.use(express.static("public"));
+//Require Routes
+require("./routes/routes.js")(app);
 
 //require handlebars
 app.engine("handlebars", exprhbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-//Database configuration
-//Initialize Mongoose
-mongoose.connect('mongodb://localhost/my_database');
-
-
 //Scrape the Website
-//Making a request call for the news website. The page's HTML is saved as the callback's third argument
+//Making a request call for the new york times website. The page's HTML is saved as the callback's third argument
 request("https://www.nytimes.com/", function(error, response, html) {
 
     //Load the HTML into cheerio and save it to a variable
@@ -63,6 +61,10 @@ request("https://www.nytimes.com/", function(error, response, html) {
     console.log(result);
 
 });
+
+//Database configuration
+//Initialize Mongoose
+mongoose.connect('mongodb://localhost/my_database');
 
 // Set the app to listen on port 3000
 app.listen(3000, function() {
