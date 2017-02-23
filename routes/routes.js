@@ -1,5 +1,6 @@
 //Require Dependencies
 var path = require("path");
+var db = require("../connection.js");
 
 // Routes
 // 1. At the root path, render a landing page
@@ -15,18 +16,22 @@ module.exports = function(app) {
     // 2. At the "/articles" path, display every entry in the collection
     app.get("/articles", function(req, res) {
         // Query: In our database, go to the animals collection, then "find" everything
-        db.articles.find({}, function(error, found) {
-            // Log any errors if the server encounters one
-            if (error) {
-                console.log(error);
-            }
-            // Otherwise, send the result of this query to the browser
-            else {
-                console.log(found);
-            }
-        }).then(function(news) {
+        db.articles.find({}).then(function(news) {
+            console.log(news);
             res.render("index", { index: news });
+        }).catch(function(error) {
+            console.log(error);
         });
     });
 
 };
+// function(error, found) {
+//             // Log any errors if the server encounters one
+//             if (error) {
+//                 console.log(error);
+//             }
+//             // Otherwise, send the result of this query to the browser
+//             else {
+//                 console.log(found);
+//             }
+//         }
