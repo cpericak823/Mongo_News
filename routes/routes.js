@@ -10,12 +10,22 @@ module.exports = function(app) {
     });
 
     app.post("/", function(req, res) {
-
+        var newsInfo = new Schema(req.body);
+        newsInfo.save(function(error, doc) {
+            if (error) {
+                res.send(error);
+            }
+            // Otherwise, render the handlebars page
+            else {
+                console.log(newsInfo);
+                res.render("index", { index: news });
+            }
+        });
     });
 
     // 2. At the "/articles" path, display every entry in the collection
     app.get("/articles", function(req, res) {
-        // Query: In our database, go to the animals collection, then "find" everything
+        // Query: In our database, go to the news collection, then "find" everything
         db.articles.find({}).then(function(news) {
             console.log(news);
             res.render("index", { index: news });
@@ -25,13 +35,3 @@ module.exports = function(app) {
     });
 
 };
-// function(error, found) {
-//             // Log any errors if the server encounters one
-//             if (error) {
-//                 console.log(error);
-//             }
-//             // Otherwise, send the result of this query to the browser
-//             else {
-//                 console.log(found);
-//             }
-//         }

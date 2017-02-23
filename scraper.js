@@ -1,6 +1,7 @@
 //Scrape the Website
 var request = require("request");
 var cheerio = require("cheerio");
+
 //Making a request call for the new york times website. The page's HTML is saved as the callback's third argument
 module.exports = function(app) {
     request("https://www.nytimes.com/", function(error, response, html) {
