@@ -35,8 +35,6 @@ module.exports = function(app) {
                     link: link
                 });
             }
-
-
         });
 
         //Log the result once cheerio analyzes each of its selected elements
