@@ -8,8 +8,8 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname + "/../public/assets/landing_page/landing_page.html"));
     });
 
-    // 2. At the "/all" path, display every entry in the collection
-    app.get("/all", function(req, res) {
+    // 2. At the "/articles" path, display every entry in the collection
+    app.get("/articles", function(req, res) {
         // Query: In our database, go to the animals collection, then "find" everything
         db.articles.find({}, function(error, found) {
             // Log any errors if the server encounters one
