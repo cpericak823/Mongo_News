@@ -5,8 +5,6 @@ $(document).ready(function() {
         $(".modal-body").html('<p>' + "20 NY Times articles have been gathered" + '</p>');
         $("#scraperModal").modal("show");
         $('#comment-form').modal('hide');
-        // viewArticles(Post);
-
     });
 
     //on click of the comment button, show the modal with a text box to add a comment to the article
@@ -32,5 +30,35 @@ $(document).ready(function() {
         });
 
     }
+
+
+     // This function grabs posts from the database and updates the view
+    // function getPosts(category) {
+  //     var categoryString = category || "";
+  //     if (categoryString) {
+  //         categoryString = "/category/" + categoryString;
+  //     }
+  //     $.get("/api/posts" + categoryString, function(data) {
+  //         console.log("Posts", data);
+  //         posts = data;
+  //         if (!posts || !posts.length) {
+  //             displayEmpty();
+  //         } else {
+  //             initializeRows();
+  //         }
+  //     });
+  // }
+
+
+    // This function does an API call to delete posts
+    // function deletePost(id) {
+    //     $.ajax({
+    //             method: "DELETE",
+    //             url: "/api/posts/" + id
+    //         })
+    //         .done(function() {
+    //             getPosts(postCategorySelect.val());
+    //         });
+    // }
 
 });

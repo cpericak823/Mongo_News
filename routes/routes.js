@@ -1,7 +1,7 @@
 //Require Dependencies
 var path = require("path");
 var db = require("../connection.js");
-var news_db = require("../models/schema.js");
+var schema = require("../models/schema.js");
 var news_articles = require("../scraper.js");
 
 
@@ -29,9 +29,9 @@ module.exports = function(app) {
     // 2. At the "/articles" path, display every entry in the collection
     app.get("/articles", function(req, res) {
         // Query: In our database, go to the news collection, then "find" everything
-        db.articles.find({}).then(function(news) {
-            console.log(news);
-            res.render("index", { index: news });
+        db.news_db.find({}).then(function(news_articles) {
+            console.log(news_articles);
+            res.render("index", { index: news_articles });
         }).catch(function(error) {
             console.log(error);
         });
