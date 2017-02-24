@@ -24,12 +24,17 @@ module.exports = function(app) {
             var link = $(element).children().attr("href");
 
             //Save these results in an object that we'll push into the result array we defined earlier
-            if (link === undefined) {
+            if (title === undefined || title === "") {
+                result.push({
+                    title: "Missing Title",
+                    link: link
+                });
+
+            } else if (link === undefined || link === "") {
                 result.push({
                     title: title,
                     link: "Missing Link"
                 });
-
             } else {
                 result.push({
                     title: title,

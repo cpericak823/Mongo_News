@@ -1,6 +1,9 @@
 //Require Dependencies
 var path = require("path");
 var db = require("../connection.js");
+var news_db = require("../models/schema.js");
+var news_articles = require("../scraper.js");
+
 
 // Routes
 // 1. At the root path, render a landing page
@@ -18,7 +21,7 @@ module.exports = function(app) {
             // Otherwise, render the handlebars page
             else {
                 console.log(newsInfo);
-                res.render("index", { index: news });
+                res.redirect("/articles");
             }
         });
     });

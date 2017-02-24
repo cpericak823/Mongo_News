@@ -23,9 +23,6 @@ require("./scraper.js")(app);
 var schema = require("./models/schema.js");
 var db = require("./connection.js");
 
-//connect to the mongo db
-db.model("Article", schema);
-
 //require handlebars
 app.engine("handlebars", exprhbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");

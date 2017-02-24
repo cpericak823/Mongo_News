@@ -1,5 +1,6 @@
 // Require mongoose
 var mongoose = require("mongoose");
+var db = require("../connection.js");
 
 // Create the Schema class
 var Schema = mongoose.Schema;
@@ -20,3 +21,6 @@ var ArticleSchema = new Schema({
 });
 
 module.exports = ArticleSchema;
+
+//connect to the mongo db
+module.exports = db.model("Article", ArticleSchema);
