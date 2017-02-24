@@ -5,9 +5,8 @@ var db = require("../connection.js");
 // Create the Schema class
 var Schema = mongoose.Schema;
 
-// Instantiate a new Schema, UserSchema
+// Instantiate a new Schema
 var ArticleSchema = new Schema({
-    // username: a required, trimmed string
     title: {
         type: String,
         trim: true,
@@ -20,7 +19,8 @@ var ArticleSchema = new Schema({
     }
 });
 
-module.exports = ArticleSchema;
+// This creates our model from the above schema, using mongoose's model method
+var Article = mongoose.model("Article", ArticleSchema);
 
-//connect to the mongo db
-module.exports = db.model("Article", ArticleSchema);
+// Finally, we export the module, allowing server.js to hook into it with a require statement
+module.exports = Article;

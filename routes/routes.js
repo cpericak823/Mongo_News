@@ -29,7 +29,7 @@ module.exports = function(app) {
     // 2. At the "/articles" path, display every entry in the collection
     app.get("/articles", function(req, res) {
         // Query: In our database, go to the news collection, then "find" everything
-        db.news_db.find({}).then(function(news_articles) {
+        Article.find({}).then(function(news_articles) {
             console.log(news_articles);
             res.render("index", { index: news_articles });
         }).catch(function(error) {

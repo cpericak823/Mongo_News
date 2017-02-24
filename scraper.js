@@ -1,6 +1,7 @@
 //Scrape the Website
 var request = require("request");
 var cheerio = require("cheerio");
+var schema = require("./models/schema.js");
 
 //Making a request call for the new york times website. The page's HTML is saved as the callback's third argument
 module.exports = function(app) {
@@ -42,6 +43,17 @@ module.exports = function(app) {
                 });
             }
         });
+
+        //save the array
+        var newsInfo = new Article(result);
+        ArticleSchema.save(function(err) {
+            if (err) {
+                return handleError(err);
+            } else {
+                console.log(newsInfo);
+            }
+        });
+
 
         //Log the result once cheerio analyzes each of its selected elements
         console.log(result.slice(0, 21));
