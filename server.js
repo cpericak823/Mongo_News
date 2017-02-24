@@ -20,7 +20,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Require external files
 require("./routes/routes.js")(app);
 var news_articles = require("./scraper.js")(app);
-var schema = require("./models/schema.js");
+// var schema = require("./models/schema.js");
+
 var db = require("./connection.js");
 
 //require handlebars

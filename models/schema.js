@@ -5,14 +5,13 @@ var db = require("../connection.js");
 // Create the Schema class
 var Schema = mongoose.Schema;
 
-// Instantiate a new Schema
+// Instantiate a new Schema with a title and link documents
 var ArticleSchema = new Schema({
     title: {
         type: String,
         trim: true,
         required: "Title is Required"
     },
-    // password: a required, trimmed string that's 6 characters or longer
     link: {
         type: String,
         trim: true,
