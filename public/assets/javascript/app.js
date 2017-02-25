@@ -8,46 +8,45 @@ $(document).ready(function() {
     });
 
     //on click of the comment button, show the modal with a text box to add a comment to the article
-    $("#comment-button").on("click", function() {
-        event.preventDefault();
-        $(".modal-body").html('<p>' + "Leave your comment here" + '</p>');
-        $("#scraperModal").modal("show");
-        $('#comment-form').modal('show');
-
-        //capture and trim the text from the input box
-        var userpost = $('#user-comment').val().trim();
-
-        //call the viewArticles function with the userpost variable as the parameter
-        viewArticles(userpost);
-    });
-
-    //function definition that adds the user comment 
-    function viewArticles(Post) {
-        $.post("/", Post, function(user) {
-            window.location.href = "/articles";
-        }).fail(function(err) {
-            alert('Articles not collected');
-        });
-
-    }
+    // $("#save-button").on("click", function() {
 
 
-     // This function grabs posts from the database and updates the view
+
+    // });
+
+    // //capture and trim the text from the input box
+    // var userpost = $('#user-comment').val().trim();
+
+    // //call the viewArticles function with the userpost variable as the parameter
+    // viewArticles(userpost);
+    // //function definition that adds the user comment 
+    // function viewArticles(Post) {
+    //     $.post("/", Post, function(user) {
+    //         window.location.href = "/articles";
+    //     }).fail(function(err) {
+    //         alert('Articles not collected');
+    //     });
+
+    // }
+
+
+
+    // This function grabs posts from the database and updates the view
     // function getPosts(category) {
-  //     var categoryString = category || "";
-  //     if (categoryString) {
-  //         categoryString = "/category/" + categoryString;
-  //     }
-  //     $.get("/api/posts" + categoryString, function(data) {
-  //         console.log("Posts", data);
-  //         posts = data;
-  //         if (!posts || !posts.length) {
-  //             displayEmpty();
-  //         } else {
-  //             initializeRows();
-  //         }
-  //     });
-  // }
+    //     var categoryString = category || "";
+    //     if (categoryString) {
+    //         categoryString = "/category/" + categoryString;
+    //     }
+    //     $.get("/api/posts" + categoryString, function(data) {
+    //         console.log("Posts", data);
+    //         posts = data;
+    //         if (!posts || !posts.length) {
+    //             displayEmpty();
+    //         } else {
+    //             initializeRows();
+    //         }
+    //     });
+    // }
 
 
     // This function does an API call to delete posts

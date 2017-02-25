@@ -43,8 +43,11 @@ module.exports = function(app) {
                 });
             }
 
-            //save the array
-            var newsInfo = new Article({ title: title, link: link });
+            //save the array in the database
+            var newsInfo = new Article({
+                title: title,
+                link: link
+            });
             newsInfo.save(function(err) {
                 if (err) {
                     console.log(err);
@@ -53,9 +56,6 @@ module.exports = function(app) {
                 }
             });
         });
-
-
-
 
         //Log the result once cheerio analyzes each of its selected elements
         console.log(result.slice(0, 21));

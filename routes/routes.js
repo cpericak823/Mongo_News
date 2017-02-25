@@ -13,25 +13,15 @@ module.exports = function(app) {
     });
 
     app.post("/", function(req, res) {
-        var newsInfo = new Schema(req.body);
-        newsInfo.save(function(error, doc) {
-            if (error) {
-                res.send(error);
-            }
-            // Otherwise, render the handlebars page
-            else {
-                console.log(newsInfo);
-                res.redirect("/articles");
-            }
-        });
+
     });
+
 
     // 2. At the "/articles" path, display every entry in the collection
     app.get("/articles", function(req, res) {
         // Query: In our database, go to the news collection, then "find" everything
-        Article.find({}).then(function(news_articles) {
-            console.log(news_articles);
-            res.render("index", { index: news_articles });
+        schema.find({}).then(function(newsList) {
+            res.render("index", { index: newsList });
         }).catch(function(error) {
             console.log(error);
         });

@@ -1,7 +1,8 @@
+
 <ul class="newsArticles">
 {{#each index}}
-<li class="articleTitle">{{title}}</li> 
-<li class="articleLink">{{link}}</li> 
-<button type="button"class="btn btn-lg btn-primary" id="comment-button">Comment</button></li> 
+<ul class="articleTitle">{{title}}</ul> 
+<a href="{{link}}"><ul class="articleLink">{{link}}</ul> </a>
+<button type="button"class="btn btn-sm btn-primary text-center" id="save-button">Save Article</button></li> 
 {{/each}}
 </ul>

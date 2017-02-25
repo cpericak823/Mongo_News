@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Mongo News</title>
-	<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-	 <script type="text/javascript" src = "/assets/javascript/app.js"> </script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Articles</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- Bootstrap Core CSS -->
+  <link href="../../assets/landing_page/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="../../assets/landing_page/css/landing-page.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="../../assets/css_handlebars/style.css" rel="stylesheet">
+  <!-- Custom Fonts -->
+  <link href="../../assets/landing_page/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 </head>
+
 <body>
-<div class="container">
   <!-- Navigation -->
   <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
     <div class="container topnav">
@@ -27,13 +38,13 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#">Get News Articles</a>
+            <a href="#" class="scraper">Get News Articles</a>
           </li>
           <li>
             <a href="#">Saved Articles</a>
           </li>
           <li>
-            <a href="#">View Source</a>
+            <a href="https://www.nytimes.com/">View Source</a>
           </li>
         </ul>
       </div>
@@ -41,10 +52,26 @@
     </div>
     <!-- /.container -->
   </nav>
-
-	{{{body}}}
-	
+  <div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Today's News</h3>
+  </div>
+  <div class="panel-body">
+{{{body}}}
+  </div>
 </div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  {{!-- JQUERY --}}
+  <script src="https://code.jquery.com/jquery.js"></script>
+ <!-- jQuery -->
+  <script src="../../assets/landing_page/js/jquery.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="../../assets/landing_page/js/bootstrap.min.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="../../assets/landing_page/js/bootstrap.js"></script>
+  <!-- Bootstrap JavaScript -->
+  <script src="../../assets/javascript/app.js"></script>
 </body>
 
 </html>
