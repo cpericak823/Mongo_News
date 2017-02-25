@@ -1,18 +1,18 @@
 $(document).ready(function() {
     //on click of the scraper button, show the modal with the message below
-    $(".scraper").click(function(event) {
+    $(".scraper").on(function() {
         event.preventDefault();
         $(".modal-body").html('<p>' + "20 NY Times articles have been gathered" + '</p>');
         $("#scraperModal").modal("show");
         $('#comment-form').modal('hide');
     });
 
-    //on click of the comment button, show the modal with a text box to add a comment to the article
-    // $("#save-button").on("click", function() {
+    //on click of the save button, show the modal with a text box to add a comment to the article
+    $(".save-button").on("click", function(e) {
 
 
 
-    // });
+    });
 
     // //capture and trim the text from the input box
     // var userpost = $('#user-comment').val().trim();
