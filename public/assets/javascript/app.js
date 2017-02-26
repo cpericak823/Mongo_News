@@ -8,9 +8,9 @@ $(document).ready(function() {
     });
 
     //on click of the save button, show the save modal
-    $(".save-button").on("click", function(event) {
-
+    $(".save-button").on("submit", function(event) {
         event.preventDefault();
+        var currentURL = window.location.origin;
         $(".modal-body").html('<p>' + "Your Article has been saved" + '</p>');
         $("#scraperModal").modal("show");
         $('#comment-form').modal('hide');

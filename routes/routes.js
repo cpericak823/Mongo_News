@@ -34,9 +34,13 @@ module.exports = function(app) {
     });
 
 
-    app.post("/", function(req, res) {
-
+    app.put("/savedarticles", function(req, res) {
+        schema.findByIdAndUpdate(id, { $set: { saved: false } }, { new: true }.then(function(savedarticles) {
+            res.render("savedArticles", { savedArticles: myArticles });
+            console.log(schema);
+        }).catch(function(err) {
+            console.log(err);
+        }));
     });
-
 
 };

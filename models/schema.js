@@ -15,7 +15,8 @@ var ArticleSchema = new Schema({
     link: {
         type: String,
         trim: true,
-    }
+    },
+    saved: Boolean,
 });
 
 // This creates our model from the above schema, using mongoose's model method
