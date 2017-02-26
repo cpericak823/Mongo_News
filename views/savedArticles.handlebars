@@ -3,6 +3,13 @@
 {{#each savedArticles}}
 <ul class="articleTitle">{{title}}</ul> 
 <a href="{{link}}"><ul class="articleLink">{{link}}</ul> </a>
-<button type="button"class="btn btn-sm btn-primary text-center" id="comment-button">Comment</button></li> 
+{{!-- create a form with a submit button--}}
+<form action="/" method="post" class="comment-form">
+<div class="form-group">
+          <label for="article_comment" class="article_comment"></label>
+          <input type="text" id="article_comment" name="article_comment" class="form-control">
+     </div>
+	<button type="submit" class="create-button btn btn-sm btn-primary text-center" id="submit">Comment</button>
+	</form>
 {{/each}}
 </ul>
