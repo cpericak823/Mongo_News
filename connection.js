@@ -1,7 +1,7 @@
 var mongoose = require('mongoose');
 
 //Initialize Mongoose
-mongoose.connect('mongodb://localhost/news/articles');
+mongoose.connect('mongodb://heroku_64sscx3h:qh8rhkjbg37oar7m02n2l58eb@ds157509.mlab.com:57509/heroku_64sscx3h');
 // Save our mongoose connection to db
 var db = mongoose.connection;
 

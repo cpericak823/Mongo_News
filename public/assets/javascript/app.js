@@ -8,7 +8,7 @@ $(document).ready(function() {
     });
 
     //on click of the save button, show the save modal
-    $(".save-button").on("submit", function(event) {
+    $(".save-button").on("click", (function(event) {
         event.preventDefault();
         var currentURL = window.location.origin;
         $(".modal-body").html('<p>' + "Your Article has been saved" + '</p>');
@@ -16,7 +16,7 @@ $(document).ready(function() {
         $('#comment-form').modal('hide');
         $('#save-form').modal('show');
 
-    });
+    }));
 
     // //capture and trim the text from the input box
     // var userpost = $('#user-comment').val().trim();
