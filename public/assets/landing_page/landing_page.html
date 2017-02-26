@@ -48,7 +48,7 @@
             <a href="/articles" class="scraper">Get News Articles</a>
           </li>
           <li>
-            <a href="#">Saved Articles</a>
+            <a href="/savedarticles">Saved Articles</a>
           </li>
           <li>
             <a href="https://www.nytimes.com/">View Source</a>
@@ -75,7 +75,7 @@
                 </button>
               </li>
               <li>
-                <a href="#" class="btn btn-default btn-lg"> <span class="network-name glyphicon glyphicon-floppy-disk" aria-hidden="true">Saved Articles</span></a>
+                <a href="/savedarticles" class="btn btn-default btn-lg"> <span class="network-name glyphicon glyphicon-floppy-disk" aria-hidden="true">Saved Articles</span></a>
               </li>
               <li>
                 <a href="https://www.nytimes.com/" class="btn btn-default btn-lg"><span class="network-name glyphicon glyphicon-home" aria-hidden="true">View Source</span></a>
@@ -111,11 +111,24 @@
         <div class="modal-footer ">
           <button type="button " class="btn btn-secondary " data-dismiss="modal">Close</button>
         </div>
+        <!-- Start | Save Form -->
+        <form id="save-form" style="display:none;">
+          <div class="modal-body">
+            <div id="div-save-msg">
+              <span id="text-save-msg">You can view your saved articles by clicking Saved Articles</span>
+            </div>
+            <div class="modal-footer">
+              <div>
+                <button type="button " class="btn btn-secondary " data-dismiss="modal">Close</button>
+              </div>
+            </div>
+        </form>
+        <!-- End | Save Form -->
         <!-- Start | Comment Form -->
         <form id="comment-form" style="display:none;">
           <div class="modal-body">
             <div id="div-comment-msg">
-              <span id="text-register-msg">Leave A Comment</span>
+              <span id="text-comment-msg">Leave A Comment</span>
             </div>
             <input id="user-comment" class="form-control" type="text" placeholder="Leave your comment here" required>
           </div>
@@ -126,17 +139,17 @@
           </div>
         </form>
         <!-- End | Comment Form -->
+        </div>
       </div>
     </div>
-  </div>
-  <!-- jQuery -->
-  <script src="/assets/landing_page/js/jquery.js"></script>
-  <!-- Bootstrap Core JavaScript -->
-  <script src="/assets/landing_page/js/bootstrap.min.js"></script>
-  <!-- Bootstrap JavaScript -->
-  <script src="/assets/landing_page/js/bootstrap.js"></script>
-  <!-- Bootstrap JavaScript -->
-  <script src="/assets/javascript/app.js"></script>
+    <!-- jQuery -->
+    <script src="/assets/landing_page/js/jquery.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/assets/landing_page/js/bootstrap.min.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="/assets/landing_page/js/bootstrap.js"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="/assets/javascript/app.js"></script>
 </body>
 
 </html>

@@ -12,19 +12,31 @@ module.exports = function(app) {
         res.sendFile(path.join(__dirname + "/../public/assets/landing_page/landing_page.html"));
     });
 
-    app.post("/", function(req, res) {
-
-    });
-
 
     // 2. At the "/articles" path, display every entry in the collection
     app.get("/articles", function(req, res) {
         // Query: In our database, go to the news collection, then "find" everything
         schema.find({}).then(function(newsList) {
-            res.render("index", { index: newsList });
+            res.render("articles", { articles: newsList });
         }).catch(function(error) {
             console.log(error);
         });
     });
+
+    // 2. At the "/articles" path, display every entry in the collection
+    app.get("/savedarticles", function(req, res) {
+        // Query: In our database, go to the news collection, then "find" everything
+        schema.find({}).then(function(myArticles) {
+            res.render("savedArticles", { savedArticles: myArticles });
+        }).catch(function(error) {
+            console.log(error);
+        });
+    });
+
+
+    app.post("/", function(req, res) {
+
+    });
+
 
 };

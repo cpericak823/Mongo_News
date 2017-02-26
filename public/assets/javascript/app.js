@@ -1,16 +1,20 @@
 $(document).ready(function() {
     //on click of the scraper button, show the modal with the message below
-    $(".scraper").on(function() {
+    $(".scraper").click(function(event) {
         event.preventDefault();
         $(".modal-body").html('<p>' + "20 NY Times articles have been gathered" + '</p>');
         $("#scraperModal").modal("show");
         $('#comment-form').modal('hide');
     });
 
-    //on click of the save button, show the modal with a text box to add a comment to the article
-    $(".save-button").on("click", function(e) {
+    //on click of the save button, show the save modal
+    $(".save-button").on("click", function(event) {
 
-
+        event.preventDefault();
+        $(".modal-body").html('<p>' + "Your Article has been saved" + '</p>');
+        $("#scraperModal").modal("show");
+        $('#comment-form').modal('hide');
+        $('#save-form').modal('show');
 
     });
 
